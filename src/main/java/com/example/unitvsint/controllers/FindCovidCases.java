@@ -17,13 +17,21 @@ public class FindCovidCases {
         // Typically if we're working with an API we would do our service call here
         // Return 0 first to fail our first test.Change return after getting/creating data
 
-        // User can give empty input
+        Map<String, Integer> casesMap = null;
+        int totalCases = 0;
+
+        // User can give empty input. isEmpty is method in Java that checks if String is empty
         if(countryName.isEmpty()) throw new NullPointerException("Input required.");
 
-        // Input may not be in database
+        casesMap = getCasesStatistic();
 
-        Map<String, Integer> casesMap = getCasesStatistic();
-        int totalCases = casesMap.get(countryName);
+        // Input may not be in database. containsKey is Java method
+        if(!casesMap.containsKey(countryName)) {
+            throw new NullPointerException("Invalid input.");
+        } else {
+            totalCases = casesMap.get(countryName);
+        }
+
         return totalCases;
     }
 

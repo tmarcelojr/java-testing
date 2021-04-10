@@ -37,14 +37,20 @@ public class FindCovidCasesTest {
             int count = country.getCases(countryName);
         } catch(Exception e) {
             // In here we can use e to return the NullPointerException
-            System.out.println("findCasesWithEmptyString: test pass. " + e);
+            System.out.println("findCasesWithEmptyInput: test pass. " + e);
         }
     }
 
     public static void findCasesWithInvalidInput() {
+        try {
             String countryName = "ABC";
             int expectedTotalCases = 0;
             FindCovidCases country = new FindCovidCases();
             int count = country.getCases(countryName);
+
+        } catch(Exception e) {
+            // In here we can use e to return the NullPointerException
+            System.out.println("findCasesWithInvalidInput: test pass. " + e);
+        }
     }
 }
