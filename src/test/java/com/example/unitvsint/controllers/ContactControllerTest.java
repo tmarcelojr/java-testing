@@ -3,6 +3,7 @@ package com.example.unitvsint.controllers;
 public class ContactControllerTest {
 
     public static void main(String[] args) {
+        testName();
         testCheckNumberLength_True();
         testCheckNumberLength_EmptyString();
     }
@@ -15,18 +16,16 @@ public class ContactControllerTest {
     // ContactController contactController = new ContactController();
 
 
-    // public void testName() {
-    //     // if statements
-    //     if ("Kevin".equalsIgnoreCase(contactController.name)) {
-    //         System.out.println("Test Pass");
-    //     } else {
-    //         System.out.println("Test Fail");
-    //     }
-    // }
+    public static void testName() {
+        if ("Kevin".equalsIgnoreCase(ContactController.name)) {
+            System.out.println("Test Pass");
+        } else {
+            System.out.println("Test Fail");
+        }
+    }
 
-    // Will get an error that variable cannot be ref
 
-    // Calls checkNumberLength and checks result is true when number test is a regular ten digit String
+    // Calls checkNumberLength and checks result if true when number test is a regular ten digit String
     public static void testCheckNumberLength_True() {
         // test for the length or integer
         String number_test = "1234567890";
@@ -39,7 +38,7 @@ public class ContactControllerTest {
     }
 
 
-    // Write comment here for this method
+    // Checks to see if number field is empty
     public static void testCheckNumberLength_EmptyString() {
         String number_test = "";
         boolean result = ContactController.checkNumberLength(number_test);
