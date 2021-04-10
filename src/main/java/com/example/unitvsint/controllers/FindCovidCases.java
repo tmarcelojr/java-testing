@@ -13,18 +13,19 @@ public class FindCovidCases {
         System.out.println("Hello World!");
     }
 
-    public int getCases(String country_name) {
+    public int getCases(String countryName) {
         // Typically if we're working with an API we would do our service call here
-        // Return 0 first to fail our first test.
+        // Return 0 first to fail our first test.Change return after getting/creating data
 
-        // Change return after creating code
+        // User can give empty input
+        if(countryName.isEmpty()) throw new NullPointerException("Input required.");
+
+        // Input may not be in database
+
         Map<String, Integer> casesMap = getCasesStatistic();
-        int totalCases = casesMap.get(country_name);
+        int totalCases = casesMap.get(countryName);
         return totalCases;
     }
-
-    // User can give empty input
-    // Input may not be in database
 
     private Map<String, Integer> getCasesStatistic() {
         // In Java Map is an object that maps keys and values
