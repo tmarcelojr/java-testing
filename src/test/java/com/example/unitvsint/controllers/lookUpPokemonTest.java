@@ -36,7 +36,7 @@ public class lookUpPokemonTest {
             }
 
             // This will fail because you cannot compare two objects using == or equals() because
-            // they are from different memory location. You would need to override equals(). 
+            // they are from different memory location. You would need to override equals().
             if(mockData.getAbility().equals(response.getAbility())) { // Expected to be lightning rod
                 System.out.println("ability: test pass");
             } else {
