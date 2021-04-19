@@ -11,11 +11,7 @@ public class LookUpPokemon {
     public PokemonResponseData getPokemonStats() {
     //     // service call or mock data
         Abilities pokemonAbilities = new Abilities("s");
-        PokemonResponseData pokemonInfo = new PokemonResponseData();
-        pokemonInfo.setName("Pikachu");
-        pokemonInfo.setAbility(pokemonAbilities);
-        pokemonInfo.setOrder(65);
-        pokemonInfo.setWeight("75");
+        PokemonResponseData pokemonInfo = new PokemonResponseData("Pikachu", 65, "75", pokemonAbilities);
         return pokemonInfo;
     }
 
